@@ -1,14 +1,15 @@
 package engine;
 
+import java.util.Set;
+
+import competition.Athlete;
 import competition.Competition;
-import competition.Gender;
 import competition.Miting;
-import competition.Race;
-import competition.RunningCompetition;
-import competition.ThrowingCompetition;
+import sport.running.RunningCompetition;
 import sport.running.Sprint100m;
 import sport.running.Sprint60m;
 import sport.throwing.JavelinThrow;
+import sport.throwing.ThrowingCompetition;
 
 public class Program {
 
@@ -22,20 +23,25 @@ public class Program {
 		Competition sprint60Competition = new RunningCompetition(sprint60m);
 		Competition sprint100Competition = new RunningCompetition(sprint100m);
 		Competition javelinCompetition = new ThrowingCompetition(javelinThrow);
-		Competition nullCompetition = new ThrowingCompetition(null);
+
+		AthletesSelection selection = new AthletesSelection();
+		selection.init();
+		Set<Athlete> femaleAthletes = selection.getFemaleAthletes();
+		Set<Athlete> maleAthletes = selection.getMaleAthletes();
+		printAthletes(femaleAthletes);
 
 		tokyoMiting.add(sprint60Competition);
 		tokyoMiting.add(sprint100Competition);
 		tokyoMiting.add(javelinCompetition);
-		tokyoMiting.add(nullCompetition);
 
-		
 		System.out.println(tokyoMiting.toString());
 
 	}
-	
-	private static Race createRace(Gender gender, int numberOfAthletes) {
-		Race race = new Race(gender);
-		return race;
+
+	private static void printAthletes(Set<Athlete> athletes) {
+		for (Athlete athlete : athletes) {
+			System.out.println(athlete);
+		}
 	}
+
 }
