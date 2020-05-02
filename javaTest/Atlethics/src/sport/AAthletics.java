@@ -1,15 +1,15 @@
 package sport;
 
-public class AAthletics {
+public abstract class AAthletics {
 
-	protected AtleticsBranch branch;
+	protected AthleticsSport sport;
 	
-	public AAthletics(AtleticsBranch branch) {
-		this.branch = branch;
+	public AAthletics(AthleticsSport sport) {
+		this.sport = sport;
 	}
 	
 	@Override
 	public String toString() {
-		return "Discipline: " +  branch.toString();
+		return "Sport: " +  sport.toString();
 	}
 }

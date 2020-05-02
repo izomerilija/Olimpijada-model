@@ -1,13 +1,20 @@
 package sport.running;
 
-public class Sprint60m extends ATrackAndField {
-	
+import sport.AthleticsSport;
+
+public class Sprint60m extends ATrackAndField implements IDistance {
+
 	public Sprint60m() {
-		super(DISTANCE_60M);
+		super(AthleticsSport.RUNNING_SPRINT_60, DISTANCE_60M);
 	}
 
-	public void bla() {
-		System.out.println("BLA BLA");
+	@Override
+	public int getMaxNumberAthletes() {
+		return 9;
 	}
 
+	@Override
+	public int getMaxNumberAthletesPerRace() {
+		return 9;
+	}
 }

@@ -1,9 +1,11 @@
 package sport.throwing;
 
-public class JavelinThrow extends AThrowing{
+import sport.AthleticsSport;
+
+public class JavelinThrow extends AThrowing {
 
 	public JavelinThrow() {
-		super(Equipment.JAVELIN);
+		super(AthleticsSport.JAVELIN_THROW, Equipment.JAVELIN);
 	}
 
 }

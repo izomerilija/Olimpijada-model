@@ -1,14 +1,14 @@
 package sport.throwing;
 
 import sport.AAthletics;
-import sport.AtleticsBranch;
+import sport.AthleticsSport;
 
-public class AThrowing extends AAthletics {
+public abstract class AThrowing extends AAthletics implements IThrowingEquipment {
 
 	private Equipment equipment;
 
-	public AThrowing(Equipment equipment) {
-		super(AtleticsBranch.THROWING);
+	public AThrowing(AthleticsSport throwing, Equipment equipment) {
+		super(throwing);
 		this.equipment = equipment;
 	}
 
@@ -18,6 +18,6 @@ public class AThrowing extends AAthletics {
 
 	@Override
 	public String toString() {
-		return "THROWING(" + equipment + ")";
+		return sport.getBranch() + "(" + equipment + ")";
 	}
 }
