@@ -5,7 +5,7 @@
 
 #include "Gender.h"
 #include "AthleticsDiscipline.h"
-#include "InitParticipants.h"
+#include "InitAthletes.h"
 
 using namespace std;
 
@@ -54,10 +54,9 @@ public:
 		this->qualificationScore = score;
 	}
 
-	void print(string fullName, AthleticsDiscipline discipline, double qualificationScore)
+	//void print(string fullName, AthleticsDiscipline discipline, double qualificationScore)
 
-
-	@Override
+	//@Override
 	public String toString() {
 		return new StringBuilder().append(fullName).append(", compete ").append(sport).append(" with qualification score: ").append(qualificationScore)
 				.toString();
