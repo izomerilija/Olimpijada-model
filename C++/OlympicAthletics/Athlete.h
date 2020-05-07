@@ -3,8 +3,6 @@
 
 #include "InitAthletes.h"
 #include "Gender.h"
-#include "AthleticsDisciplines.h"
-
 
 using namespace std;
 
@@ -97,7 +95,7 @@ public:
 
 };
 
-ostream& operator<<(ostream& os, const Athlete& atl){
+inline ostream& operator<<(ostream& os, const Athlete& atl){
     os << atl.getFullName() << ", compete " << athleticsDiscipline[atl.discipline] << " with qualification score: " << to_string(atl.qualificationScore);
     return os;
 }
