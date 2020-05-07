@@ -1,42 +1,40 @@
-#ifndef MEETING_H_INCLUDED
-#define MEETING_H_INCLUDED
-
-#include <string>
-#include <iostream>
-
-#include "AthleticsDiscipline.h"
-#include "AthleticsBranch.h"
-#include "dinString.h"
+#include "Meeting.h"
 
 using namespace std;
 
-class Meeting{
-protected:
-    DinString meetingName;
+//constructors
+Meeting::Meeting(){
+    name = "";
+}
+Meeting::Meeting(DinString lOlympics){
+    name = lOlympics;
+}
+Meeting::Meeting(const Meeting &olympics){
+    name = olympics.name;
+}
 
-public:
-    Meeting(){
+//getters
+DinString Meeting::getName() const {return name;}
 
-    }
-    void printDisciplines() {
-        cout << "Athletics disciplines on Tokyo meeting:" << "\n\n";  // staviti promenjivu umesto tokyo
-        for (int i = 0; i < NUMBER_OF_A_DISCIPLINES; i++)
-        {
-            if (i == 0){
-            cout << ">RUNNING:" << endl;              //trkačke discipline
-            }
-            if (i == NUMBER_OF_R_DISCIPLINES){        //odavde kreću skakačke discipline
-            cout << "\n" << ">JUMPING:"<< endl;
-            }
-            if (i == NUMBER_OF_R_DISCIPLINES + NUMBER_OF_J_DISCIPLINES){  //odavde kreću bacačke discipline
-            cout << "\n" << ">THROWING:"<< endl;
-            }
-            cout << "-" << athleticsDiscipline[i] << "\n";
-        }
-        cout << "\n" << "+ Heptathlon (7) and Decathlon (10)"<< endl;
-    }
-
-};
+//setters
+void Meeting::setName(DinString meetingName){name = meetingName;}
 
 
-#endif // MEETING_H_INCLUDED
+//operator overload
+ostream& operator<<(ostream& osM, const Meeting& olympics){
+osM << "Athletics disciplines on " << olympics.getName() << " meeting:" << "\n\n";
+
+for (int i = 1; i < NUMBER_OF_A_DISCIPLINES + 1; i++){
+    if (i == 1)
+    osM << ">RUNNING:" << endl;        //trkačke discipline
+    if (i == NUMBER_OF_R_DISCIPLINES + 1)  //odavde kreću skakačke discipline
+    osM << "\n" << ">JUMPING:"<< endl;
+    if (i == NUMBER_OF_R_DISCIPLINES + NUMBER_OF_J_DISCIPLINES + 1) //odavde kreću bacačke discipline
+    osM << "\n" << ">THROWING:"<< endl;
+    osM << "-" << athleticsDiscipline[i] << "\n";
+}
+osM << "\n" << "+ Heptathlon (7) and Decathlon (10)"<< endl;
+osM << "\n" << "-----------------------------------"<< "\n\n";
+
+return osM;
+}

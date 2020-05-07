@@ -12,31 +12,23 @@ using namespace std;
 
 class Meeting{
 protected:
-    DinString meetingName;
+    DinString name;
 
 public:
-    Meeting(){
+    //constructors
+    Meeting();
+    Meeting(DinString lOlympics);
+    Meeting(const Meeting &olympics);
 
-    }
-    void printDisciplines() {
-        cout << "Athletics disciplines on Tokyo meeting:" << "\n\n";  // staviti promenjivu umesto tokyo
-        for (int i = 0; i < NUMBER_OF_A_DISCIPLINES; i++)
-        {
-            if (i == 0){
-            cout << ">RUNNING:" << endl;              //trkačke discipline
-            }
-            if (i == NUMBER_OF_R_DISCIPLINES){        //odavde kreću skakačke discipline
-            cout << "\n" << ">JUMPING:"<< endl;
-            }
-            if (i == NUMBER_OF_R_DISCIPLINES + NUMBER_OF_J_DISCIPLINES){  //odavde kreću bacačke discipline
-            cout << "\n" << ">THROWING:"<< endl;
-            }
-            cout << "-" << athleticsDiscipline[i] << "\n";
-        }
-        cout << "\n" << "+ Heptathlon (7) and Decathlon (10)"<< endl;
-    }
+    //getters
+    DinString getName() const;
+
+    //setters
+    void setName(DinString meetingName);
+
+    //print
+    friend ostream& operator<<(ostream& os, const Meeting& olympics);
 
 };
-
 
 #endif // MEETING_H_INCLUDED
