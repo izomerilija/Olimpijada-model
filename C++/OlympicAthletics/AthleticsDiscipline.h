@@ -2,10 +2,13 @@
 #define ATHLETICSDISCIPLINE_H_INCLUDED
 
 #include "AthleticsBranch.h"
+#include <string>
+
 #define NUMBER_OF_A_DISCIPLINES 22 // Olympic Athletics Disciplines
 #define NUMBER_OF_R_DISCIPLINES 14 // Olympic Running Disciplines
 #define NUMBER_OF_J_DISCIPLINES 4 // Olympic Jumping Disciplines
 #define NUMBER_OF_T_DISCIPLINES 4 // Olympic Throwing Disciplines
+
 
 using namespace std;
 
@@ -23,14 +26,13 @@ enum AthleticsDiscipline {
 	JAVELIN_THROW, SHOTPUT_THROW, DISC_THROW, HAMMER_THROW
 };
 
-char athleticsDiscipline[NUMBER_OF_A_DISCIPLINES][50] = { "Sprint 60m", "Sprint 100m", "Sprint 200m", "Sprint 400m",
+string athleticsDiscipline[50] = {"",
+     "Sprint 60m", "Sprint 100m", "Sprint 200m", "Sprint 400m",
      "Middle 800m", "Middle 1500m", "Middle 3000m",
      "Hurdles 100m (FEMALE)", "Hurdles 110m (MALE)", "Hurdles 400m",
      "Long 5000m", "Long 10000m",
      "Steeplechase 3000m", "Marathon 42100m",
-
      "High jump", "Long jump", "Tripple jump", "Pole jump",
-
      "Javelin throw", "Shot-put throw", "Disc throw", "Hammer throw",
 };
 
