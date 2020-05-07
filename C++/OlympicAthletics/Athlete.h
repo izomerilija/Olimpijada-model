@@ -17,87 +17,31 @@ private:
 public:
 
     //constructors:
-    Athlete() {
-        gender = NOT_SPECIFIED;
-        fullName = " ";
-        discipline = NO_DISCIPLINE;
-        double qualificationScore = 0.00;
-    }
-    Athlete(Gender gender, string fullName, AthleticsDiscipline discipline, double qualificationScore) {
-		this->gender = gender;
-		this->fullName = fullName;
-		this->discipline = discipline;
-		this->qualificationScore = qualificationScore;
-	}
-	Athlete (const Athlete &A){
-        gender = A.gender;
-        fullName = A.fullName;
-        discipline = A.discipline;
-        qualificationScore = A.qualificationScore;
-	}
+    Athlete();
+    Athlete(Gender gender, string fullName, AthleticsDiscipline discipline, double qualificationScore);
+	Athlete(const Athlete &A);
 
 	//getters
-	Gender getGender() const {
-		return gender;
-	}
-
-	string getFullName() const {
-		return fullName;
-	}
-
-	AthleticsDiscipline getDiscipline(){
-        return discipline;
-	}
-
-	double getQualificationScore(){
-        return qualificationScore;
-	}
+	Gender getGender() const;
+	string getFullName() const;
+	AthleticsDiscipline getDiscipline() const;
+	double getQualificationScore() const;
 
     //setters
-	void setGender (Gender sex){
-        gender = sex;
-	}
-
-	void setFullName (string name){
-        fullName = name;
-	}
-
-	void setDiscipline (AthleticsDiscipline sport) {
-		discipline = sport;
-	}
-
-	void setQualificationScore(double score) {
-		this->qualificationScore = score;
-	}
+	void setGender (Gender sex);
+	void setFullName (string name);
+	void setDiscipline (AthleticsDiscipline sport);
+	void setQualificationScore (double score);
 
 	//generating random person names:
-	void randomizeName()
-	{
-	    //creating a male name + lastname
-        if (gender == Gender::MALE)
-            this->fullName = randomAthlete.randomString(1) + " " + randomAthlete.randomString(3);
-
-        //creating a female name + lastname
-        if (gender == Gender::FEMALE)
-            this->fullName = randomAthlete.randomString(2) + " " + randomAthlete.randomString(3);
-	}
+	void randomizeName();
 
 	//generating random athletes:
-    void randomizeAll()  //name, score and competing sport (chosen discipline)
-	{
-        randomizeName();
-        this->qualificationScore = randomAthlete.getQualificationScore(); //simulation helper, generates q scores
-        this->discipline = randomAthlete.getRandomSport(); //simulation helper, assigns competing sport
-	}
+    void randomizeAll();
 
 	//operator ispisa za atletičare
 	friend ostream& operator<<(ostream& os, const Athlete& atl);
 
 };
-
-inline ostream& operator<<(ostream& os, const Athlete& atl){
-    os << atl.getFullName() << ", compete " << athleticsDiscipline[atl.discipline] << " with qualification score: " << to_string(atl.qualificationScore);
-    return os;
-}
 
 #endif // ATHLETE_H_INCLUDED
