@@ -4,16 +4,20 @@
 #include "TrackType.h"
 #include "AAthletics.h"
 
+#define DISTANCE60M 60
+
 #define MAX_SPRINT_DISTANCE 400
 #define MAX_MIDDLE_DISTANCE 3000
 #define MAX_LONG_DISTANCE 10000
 
 
-class ARunning : AAthletics{
-private:
-
+class ARunning : public AAthletics {
+protected:
+    int distance;
 public:
-
+    ARunning(AthleticsDiscipline discipline, int d) : AAthletics(discipline){
+        this->distance = d;
+    }
 };
 
 

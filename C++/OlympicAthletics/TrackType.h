@@ -1,7 +1,7 @@
 #ifndef TRACKTYPE_H_INCLUDED
 #define TRACKTYPE_H_INCLUDED
 
-public enum TrackType {
+enum TrackType {
     SPRINT, MIDDLE, LONG, MARATHON, HURDLES, RELLAY, STEEPLECHASE
 };
 

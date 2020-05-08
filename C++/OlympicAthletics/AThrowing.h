@@ -5,9 +5,11 @@
 #include "Equipment.h"
 
 class AThrowing : public AAthletics {
-private:
+protected:
 
-public
+public:
+
+    ~AThrowing();
 };
 
 #endif // ATHROWING_H_INCLUDED

@@ -40,7 +40,7 @@ public:
     void randomizeAll();
 
 	//operator ispisa za atletičare
-	friend ostream& operator<<(ostream& os, const Athlete& atl);
+	friend ostream& operator<<(ostream& osA, const Athlete& atl);
 
 };
 

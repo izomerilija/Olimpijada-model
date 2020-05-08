@@ -6,13 +6,10 @@
 
 class Sprint60m : public ARunning {
 public:
-        Sprint60m();
-        virtual ~Sprint60m();
-        Sprint60m(const Sprint60m& other);
+         Sprint60m() : ARunning(AthleticsDiscipline::RUNNING_SPRINT_60, DISTANCE60M)  {
 
-    protected:
+         }
 
-    private:
 };
 
 #endif // SPRINT60M_H

@@ -17,7 +17,7 @@ class SimulationHelper {
 
 private:
 
-    std::vector<string> maleFirstNames{ "Petar", "Oliver", "James", "Charlie", "Harris", "Lewis", "Leo", "Noah", "Jack", "Rory",
+    vector<string> maleFirstNames{ "Petar", "Oliver", "James", "Charlie", "Harris", "Lewis", "Leo", "Noah", "Jack", "Rory",
 			"Alexander", "Max", "Logan", "Lucas", "Harry", "Theo", "Thomas", "Brodie", "Archie", "Jacob", "Finlay", "Finn", "Daniel", "Joshua", "Oscar",
 			"Arthur", "Hunter", "Ethan", "Mason", "Harrison", "Freddie", "Ollie", "Adam", "William", "Jaxon", "Aaron", "Cameron", "Liam", "George", "Jamie",
 			"Callum", "Matthew", "Muhammad", "Caleb", "Nathan", "Tommy", "Carter", "Blake", "Andrew", "Luke", "Jude", "Angus", "Riley", "Luca", "Samuel",
@@ -51,7 +51,7 @@ private:
 			"Keegan-James", "Keeghan", "Keenan", "Keevan", "Keeyano", "Kei", "Keian", "Keiano", "Keillor", "Keirney", "Kel", "Kelby", "Kell", "Kellan", "Kelso",
 			"Konstantin", "Valentino", "Vali", "Ziggy", "Zinedine", "Ziyad", "Zlatin", "Zohaib", "Zohan" };
 
-    std::vector<string> femaleFirstNames{ "Ada", "Adelaide", "Adele", "Adeline", "Adrienne", "Agatha", "Agnes", "Aileen", "Alana",
+    vector<string> femaleFirstNames{ "Ada", "Adelaide", "Adele", "Adeline", "Adrienne", "Agatha", "Agnes", "Aileen", "Alana",
 			"Alberta", "Albertina", "Alexandra", "Alexis", "Alfreda", "Alice", "Alison", "Alma", "Althea", "Alvina", "Amabel", "Amanda", "Amber", "Amelia",
 			"Amy", "Anastasia", "Andrea", "Angela", "Anita", "Anna", "Annabel", "Annette", "Anthea", "Antoinette", "Antonia", "April", "Arabella", "Arlene",
 			"Ashley", "Audrey", "Augusta", "Augustina", "Aurora", "Ava", "Barbara", "Beatrice", "Belinda", "Belle", "Berenice", "Bertha", "Betty", "Beverly",
@@ -80,7 +80,7 @@ private:
 			"Ulrica", "Una", "Ursula", "Valentina", "Valerie", "Vanessa", "Vera", "Verna", "Veronica", "Victoria", "Vida", "Viola", "Violet", "Virginia",
 			"Vivian", "Wanda", "Wendy", "Wilhelmina", "Wilma", "Winifred", "Yolanda", "Yvonne", "Yvette", "Zoe" };
 
-    std::vector<string> lastNames{ "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor", "Anderson",
+    vector<string> lastNames{ "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor", "Anderson",
 			"Thomas", "Jackson", "White", "Harris", "Martin", "Thompson", "Garcia", "Martinez", "Robinson", "Clark", "Rodriguez", "Lewis", "Lee", "Walker",
 			"Hall", "Allen", "Young", "Hernandez", "King", "Wright", "Lopez", "Hill", "Scott", "Green", "Adams", "Baker", "Gonzalez", "Nelson", "Carter",
 			"Mitchell", "Perez", "Roberts", "Turner", "Phillips", "Campbell", "Parker", "Evans", "Edwards", "Collins", "Stewart", "Sanchez", "Morris", "Rogers",
@@ -112,7 +112,7 @@ public:
     }
 
     double getQualificationScore(){
-        return 500 + (double)(rand() % 500); /* + (rand()/3)*0.01*/
+        return 500 + (double)(rand() % 500); //staviti na dve decimale
     }
 };
 

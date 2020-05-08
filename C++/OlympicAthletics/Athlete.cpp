@@ -34,25 +34,10 @@ void Athlete::setFullName (string name) {fullName = name;}
 void Athlete::setDiscipline (AthleticsDiscipline sport) {discipline = sport;}
 void Athlete::setQualificationScore(double score) {qualificationScore = score;}
 
-//generisanje random imana ljudi:
-void Athlete::randomizeName() {
-    //kreiranje muskog imena sa nekim prezimenom
-    if (gender == Gender::MALE)
-        this->fullName = randomAthlete.randomString(1) + " " + randomAthlete.randomString(3);
-    //kreiranje zenskog imena sa nekim prezimenom
-    if (gender == Gender::FEMALE)
-        this->fullName = randomAthlete.randomString(2) + " " + randomAthlete.randomString(3);
-}
-//generisanje random atleticara:
-void Athlete::randomizeAll() {      //ime, kvalifikacioni rezultat i izabrana disciplina{
-    Athlete::randomizeName();
-    this->qualificationScore = randomAthlete.getQualificationScore(); //Simulation helper, generiše kvalifikacije
-    this->discipline = randomAthlete.getRandomSport(); //simulation helper, dodeljuje sport/takmičarsku disciplinu
-}
 
 //operator ispisa za atletičare
 //inline
-ostream& operator<<(ostream& os, const Athlete& atl){
-    os << atl.getFullName() << ", compete " << athleticsDiscipline[atl.discipline] << " with qualification score: " << to_string(atl.qualificationScore);
-    return os;
+ostream& operator<<(ostream& osA, const Athlete& atl){
+    osA << atl.getFullName() << ", compete " << athleticsDiscipline[atl.discipline] << " with qualification score: " << to_string(atl.qualificationScore);
+    return osA;
 }

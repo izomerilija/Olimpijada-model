@@ -26,13 +26,13 @@ enum AthleticsDiscipline {
 	JAVELIN_THROW, SHOTPUT_THROW, DISC_THROW, HAMMER_THROW
 };
 
-string athleticsDiscipline[50] = {"",
+const string athleticsDiscipline[NUMBER_OF_A_DISCIPLINES+1] = {"",
      "Sprint 60m", "Sprint 100m", "Sprint 200m", "Sprint 400m",
      "Middle 800m", "Middle 1500m", "Middle 3000m",
      "Hurdles 100m (FEMALE)", "Hurdles 110m (MALE)", "Hurdles 400m",
      "Long 5000m", "Long 10000m",
      "Steeplechase 3000m", "Marathon 42100m",
-     "High jump", "Long jump", "Tripple jump", "Pole jump",
+     "High jump", "Long jump", "Triple jump", "Pole jump",
      "Javelin throw", "Shot-put throw", "Disc throw", "Hammer throw",
 };
 

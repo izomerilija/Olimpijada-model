@@ -9,6 +9,8 @@ protected:
 
 public:
 
+
+    ~AJumping();
 };
 
 
